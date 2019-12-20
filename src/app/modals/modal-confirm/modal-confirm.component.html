@@ -1,0 +1,93 @@
+<form name="form1" [formGroup]="form" (ngSubmit)="submit(form)">
+        <div class="modal-header text-light bg-dark border-0">
+          <h4 class="modal-title pull-left">{{buttonName | uppercase}}</h4>
+          <button type="button" class="close pull-right text-white"
+           aria-label="Close" 
+          (click)="hide()"
+          routerLink="main">
+            <span class="" aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body  bg-warning">
+          <div class="d-flex align-items-center">
+            <div class="form-group  flex-sm-fill">
+              <div class=" d-flex flex-column justify-content-center"
+               role="group" aria-label="...">
+                <div class="btn-group d-flex  justify-content-center align-items-center">
+                        <label class="btn ">
+                          <input type="radio" 
+                          name="putOrTakeManey" 
+                          id="option1" 
+                          value="put"
+                          formControlName = "putOrTakeManey"
+                          (change)="radioChanges($event)"
+                          > Income
+                        </label>
+                       
+                        <label class="btn ">
+                          <input type="radio"  
+                          name="putOrTakeManey" 
+                          formControlName = "putOrTakeManey"
+                          id="option2" 
+                          value="take"
+                          (change)="radioChanges($event)"
+                         > Exes
+                        </label>    
+                      </div>
+    
+                      <div class="ml-3 mr-3 btn p-1 pl-3 pr-3 mt-2
+                      bg-danger text-center text-light" 
+                      [class.bg-success]="operation===true"
+                      [class.bg-danger]="operation===false"
+                      >{{operation}}</div>
+                    </div>
+            </div>
+    
+            <div class=" mr-3 flex-md-fill">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Write title</label>
+                <input type="text" 
+                       class="form-control"
+                       id="exampleInputEmail1"
+                       aria-describedby="emailHelp"
+                       placeholder="Title"
+                       formControlName = "title">
+                <small *ngIf="todoDataService.title" class="form-text text-danger">This input is required</small>
+              </div>
+    
+              <div class="form-group">
+                    <label for="exampleInputEmail1">Write sum</label>
+                    <input type="text" 
+                           class="form-control"
+                           id="exampleInputEmail1"
+                           aria-describedby="emailHelp"
+                           placeholder="Sum"
+                           formControlName = "sum">
+                           <small *ngIf="todoDataService.sum" class="form-text text-danger">This input is required</small>
+                  </div>
+
+              <div class="col-xs-12  form-group">
+                <label for="exampleInputDate1">Write date</label>
+                <input type="text" 
+                        placeholder="Datepicker"
+                         class="form-control" 
+                         formControlName="date"
+                         bsDatepicker
+                         date-max-limit="today"
+                         [maxDate]="maxDate"
+                         [bsConfig]="{ isAnimated: true, dateInputFormat: 'DD/MM/YYYY',  selectFromOtherMonth: true}"
+                        >
+                         <small *ngIf="todoDataService.date" class="form-text text-danger">This input is required</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="modal-footer text-light  bg-dark border-0">     
+          <button type="submit" 
+          class="btn btn-outline-warning"
+         
+          >{{buttonName}}</button>
+        </div>
+</form>

@@ -1,0 +1,30 @@
+
+  <p class="text-center" *ngIf="routeNotFaund; else windowUser">User <b>{{routeName}}</b> not found!</p>
+
+  <ng-template #windowUser>
+
+    <div class="d-flex text-center flex-wrap justify-content-around justify-content-start " 
+    *ngIf="user">
+
+      <div class="card m-3 text-white bg-dark border-warning castom-container" >
+
+        <div class="card-header card-header-castom border-warning  position-relative">
+          <div class="border-warning icon"
+          [ngStyle]="{'background-image': getUrl(user)}">
+          </div>
+        </div>
+
+        <div class="card-body">
+          <p class="card-title h5">{{user[0].name.first}} {{user[0].name.last}}</p>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.
+          </p>
+        </div>
+
+        <div class="card-footer border-warning text-right">
+          <button class="btn btn-outline-warning" (click)="showUser($event,user)">Show mor info</button>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+

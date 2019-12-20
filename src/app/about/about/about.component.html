@@ -1,0 +1,24 @@
+<div class="height">
+  <div class="d-flex justify-content-around align-items-center p-3  bg-warning text-dark section">
+    <p class="display-1"><b>About</b></p>
+  </div>
+  
+  <div class="bg-dark ">
+    <div class="d-flex custom-higth d-flex navbar-dark p-4">
+      <ul class="nav navbar-nav flex-column  border border-warning w-25 p-3">
+        <li class="nav-item p-1 m-1 btn btn-outline-warning rounded-0" routerLinkActive="active ">
+          <a class="nav-link " routerLink="project">Project</a>
+        </li>
+        <li class="nav-item p-1 m-1 btn btn-outline-warning rounded-0" routerLinkActive="active">
+          <a class="nav-link " routerLink="us">Us</a>
+        </li>
+      </ul>
+      <div class="w-100 p-3 text-warning border border-warning d-flex justify-content-center">
+
+      <div  class="w-75">
+          <router-outlet></router-outlet>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>

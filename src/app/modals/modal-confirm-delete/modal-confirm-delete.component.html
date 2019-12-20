@@ -1,0 +1,56 @@
+
+  <div class="rounded modal-body text-light bg-dark text-center">
+    <p>Do you want to delete <b class="text-warning">{{postName}}</b> ?</p>
+    <button type="button" class="btn btn-outline-warning"
+    routerLink="main"
+     (click)="confirm()">Yes</button>
+    <button type="button" class="btn btn-danger"
+    routerLink="main"
+     (click)="decline()">No</button>
+  </div>
+
+
+
+
+  
+<!-- <div class="modal-header bg-warning  border-dark">
+    <h4 class="modal-title pull-left">Modal</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="this.modal.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body bg-warning">
+      <div class="d-flex justify-content-center"><img class="photo" src="{{user.picture}}" alt="User picture"></div>
+    <p class="text-center">
+      This is {{user.name.first}} {{user.name.last}}. <br>
+      Born: {{user.date | date }}. <br>
+      Phone: {{user.phone}}. <br>
+      Email: {{user.email}}. <br>
+      Profesion: : {{user.profesion}}
+    </p>
+  </div>
+   -->
+
+
+   <!-- import { Component, TemplateRef } from '@angular/core';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap';
+
+@Component({
+  selector: 'app-modal-user',
+  templateUrl: './modal-user.component.html',
+  styleUrls: ['./modal-user.component.scss']
+})
+export class ModalUserComponent {
+  user;
+
+  constructor(private modalService: BsModalService,
+    private modal: BsModalRef) { }
+
+  openModal(template: TemplateRef<any>) {
+    this.modal = this.modalService.show(template);
+  }
+  hide() {
+    this.modal.hide()
+  }
+} -->
+

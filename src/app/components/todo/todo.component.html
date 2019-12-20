@@ -1,0 +1,49 @@
+   <div class="table-responsive" *ngIf="posts.length; else noDataInfo">
+      <table class="table text-center table-striped  table-dark" > 
+        <thead>
+         <tr>
+          <th>Transaction</th>
+          <th>Title</th>
+          <th>Spent</th>
+        </tr>
+        </thead>
+        <tbody >
+            <tr *ngFor="let post of posts | radioSearch: radioValue | searchText: search;">
+
+              <td >
+                <i *ngIf="post.putOrTakeManey === 'put'; else arrowDown"
+                 class="fas fa-chevron-circle-up text-success mt-2 fa-2x"></i>
+                <ng-template #arrowDown>
+                  <i class="fas fa-chevron-circle-down text-danger mt-2 fa-2x"></i>
+                </ng-template>
+              </td>
+
+              <td>{{post.title}} <br> {{post.date| date:'dd/MM/yyyy'}}</td>
+
+              <td><span *ngIf="post.putOrTakeManey==='put'; else minuse">+</span>
+                <ng-template #minuse>
+                  <span>-</span>
+                </ng-template>
+                {{post.sum}} <br>
+
+                <div class="btn-group btn-group-sm"
+                 role="group"
+                 aria-label="...">
+
+                  <button type="button" class="btn btn-warning"
+                  (click)="editModal(post)"
+                  routerLink="modal-post">Edit</button>
+
+                  <button type="button" class="btn btn-danger"
+                  (click)="deletePost(post.id, post.title)"
+                  routerLink="confirm">Delete</button>
+                </div>
+              </td>
+            </tr>
+        </tbody>
+      </table>
+</div>
+
+<ng-template #noDataInfo>
+  <p class="text-center h4 cl-warning">Sorry But No Data</p>
+</ng-template>

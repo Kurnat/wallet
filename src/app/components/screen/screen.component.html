@@ -1,0 +1,18 @@
+<div class="d-flex justify-content-around align-items-center p-3  bg-warning text-dark section">
+        <div>
+          <p class="text-center h3">Balanse</p>
+          <h2 class="text-center h1"><span>{{sumInWallet}}</span> <small class="h6"> UAN</small></h2>
+          <p class="text-center">+500/-500</p>
+        </div>
+        <div><i class="fas fa-wallet fa-8x"></i></div>
+      
+        <button type="button"
+         class="rounded-circle btn btn-success plass"
+         (click)="onClick($event)"
+         
+         routerLink="modal-post">
+          <p>+</p>
+        </button>
+</div>
+
+<app-search-post></app-search-post>

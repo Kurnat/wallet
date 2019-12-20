@@ -1,0 +1,23 @@
+<p class="h1 text-center">Our team</p>
+
+<div class="d-flex text-center  flex-wrap justify-content-around justify-content-start " *ngIf="users.length">
+
+  <div class="card m-3 text-white bg-dark border-warning  castom-container" *ngFor="let user of users">
+
+    <div class="card-header card-header-castom border-warning  position-relative">
+      <div class="border-warning icon" [ngStyle]="{'background-image': getUrl(user)}"></div>
+    </div>
+
+    <div class="card-body">
+      <p class="card-title h5">{{user.name.first}} {{user.name.last}}</p>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+        content.
+      </p>
+    </div>
+
+    <div class="card-footer border-warning text-right">
+      <button class="btn btn-outline-warning"
+       (click)="showUser($event,user)">Show mor info</button>
+    </div>
+  </div>
+</div>
